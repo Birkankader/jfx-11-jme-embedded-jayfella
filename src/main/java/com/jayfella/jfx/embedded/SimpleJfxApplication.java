@@ -8,8 +8,10 @@ import com.jayfella.jfx.embedded.jme.JmeOffscreenSurfaceContext;
 import com.jme3.app.SimpleApplication;
 import com.jme3.app.state.AppState;
 import com.jme3.math.ColorRGBA;
+import com.jme3.opencl.DefaultPlatformChooser;
 import com.jme3.renderer.ViewPort;
 import com.jme3.system.AppSettings;
+import com.jme3.system.JmeVersion;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -31,10 +33,23 @@ public abstract class SimpleJfxApplication extends SimpleApplication {
 
         jmeThread = Thread.currentThread();
 
-        AppSettings settings = new AppSettings(true);
+        AppSettings settings = new AppSettings(false);
 
         settings.setCustomRenderer(JmeOffscreenSurfaceContext.class);
         settings.setResizable(true);
+        settings.setWidth(1024);
+        settings.setHeight(768);
+        settings.setBitsPerPixel(24);
+        settings.setFrequency(60);
+        settings.setDepthBits(24);
+        settings.setStencilBits(0);
+        settings.setFullscreen(false);
+        settings.setRenderer("LWJGL-OpenGL3");
+        settings.setResizable(true);
+        settings.setVSync(false);
+        settings.setSamples(0);
+        settings.setGammaCorrection(true);
+        settings.setSwapBuffers(true);
 
         // setPauseOnLostFocus(false);
 
