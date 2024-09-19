@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-//    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'maven-publish'
     id 'application'
 }
@@ -18,16 +18,16 @@ java {
     withJavadocJar()
 }
 
-//javafx {
-//    version = '11'
-//    modules = [
-//            'javafx.base',
-//            'javafx.controls',
-//            'javafx.fxml',
-//            'javafx.graphics',
-//            'javafx.swing'
-//    ]
-//}
+javafx {
+    version = '11'
+    modules = [
+            'javafx.base',
+            'javafx.controls',
+            'javafx.fxml',
+            'javafx.graphics',
+            'javafx.swing'
+    ]
+}
 
 group 'com.jayfella'
 version '1.0.2'
@@ -47,5 +47,8 @@ dependencies {
     implementation "org.jmonkeyengine:jme3-core:$version_jme"
     implementation "org.jmonkeyengine:jme3-desktop:$version_jme"
     implementation "org.jmonkeyengine:jme3-lwjgl3:$version_jme"
-
+    implementation 'org.openjfx:javafx-controls:11.0.2'
+    implementation 'org.openjfx:javafx-fxml:11.0.2'
+    implementation 'org.openjfx:javafx-base:11.0.2'
+    implementation 'org.openjfx:javafx-graphics:11.0.2'
 }
